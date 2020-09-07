@@ -1,0 +1,2 @@
+rootProject.name='Knack'
+include ':app'

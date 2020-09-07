@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "161878369047",
+    "firebase_url": "https://knack-58c07.firebaseio.com",
+    "project_id": "knack-58c07",
+    "storage_bucket": "knack-58c07.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:161878369047:android:3c959c87e47e2ef1844d52",
+        "android_client_info": {
+          "package_name": "com.example.knack"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "161878369047-7o4s0ht8incqe44i6deb0q9mc81rjilb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.knack",
+            "certificate_hash": "ccd913b71d6578f2013d7ad8927c87da3604284c"
+          }
+        },
+        {
+          "client_id": "161878369047-mb1o4u2jmqb2f2s9t0ncuvtl46i45d8j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8j4k6_P4SqV3cvofEDSDYYrXgAdRH3R8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "161878369047-mb1o4u2jmqb2f2s9t0ncuvtl46i45d8j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
