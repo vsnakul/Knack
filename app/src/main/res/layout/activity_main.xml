@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AnimationActivity"
-    android:background="#fff">
+    android:background="#094067">
 
     <ImageView
         android:id="@+id/app_logo"
@@ -13,9 +13,8 @@
         android:layout_height="100dp"
         android:layout_marginTop="264dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.559"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/knack_logo">
-    </ImageView>
+        app:srcCompat="@drawable/l_white_down"></ImageView>
 </androidx.constraintlayout.widget.ConstraintLayout>

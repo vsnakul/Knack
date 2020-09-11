@@ -44,7 +44,7 @@ public class AnimationActivity extends AppCompatActivity {
         topAnim= AnimationUtils.loadAnimation(this,R.anim.top_animation);
         bottomAnim=AnimationUtils.loadAnimation(this,R.anim.bottom_animation);
         logo=findViewById(R.id.app_logo);
-        logo.setImageResource(R.drawable.knack_logo);
+        logo.setImageResource(R.drawable.l_white_down);
         logo.setAnimation(bottomAnim);
         new Handler().postDelayed(new Runnable() {
             @Override

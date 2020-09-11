@@ -48,7 +48,7 @@ public class LoginActivity extends AppCompatActivity {
         callSignup=findViewById(R.id.signincall);
         signin=findViewById(R.id.signin);
         knack_logo=findViewById(R.id.logo_image);
-        knack_logo.setImageResource(R.drawable.knack_logo);
+        knack_logo.setImageResource(R.drawable.logo_blue_down);
         greeting=findViewById(R.id.greeting);
         instruction=findViewById(R.id.instruction);
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);

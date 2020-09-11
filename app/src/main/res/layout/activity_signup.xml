@@ -24,7 +24,7 @@
                 android:layout_height="80dp"
                 android:scaleType="centerCrop"
                 android:transitionName="logo_img"
-                app:srcCompat="@drawable/knack_logo"></ImageView>
+                app:srcCompat="@drawable/logo_blue_down"></ImageView>
             <TextView
                 android:id="@+id/greeting"
                 android:layout_width="wrap_content"
