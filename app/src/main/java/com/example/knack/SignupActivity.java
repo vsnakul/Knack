@@ -21,11 +21,18 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SignupActivity extends AppCompatActivity {
     TextInputLayout fullName,userName,password,confirmPassword,phone,email;
     Button signup,signincall;
     FirebaseAuth mAuth;
+    boolean isAccountVerified=false;
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
+    UserHelperClass userHelperClass;
+    FirebaseUser firebaseUser;
 
 
     @Override
@@ -88,12 +95,20 @@ public class SignupActivity extends AppCompatActivity {
                                 @Override
                                 public void onSuccess(Void aVoid) {
                                     Toast.makeText(SignupActivity.this, "Email sent succesfully", Toast.LENGTH_SHORT).show();
+                                    firebaseDatabase=FirebaseDatabase.getInstance();
+                                    databaseReference=firebaseDatabase.getReference("users");
+                                    firebaseUser=mAuth.getCurrentUser();
+                                    String userId=firebaseUser.getUid();
+                                    System.out.println("id of the user is "+userId);
+                                     userHelperClass=new UserHelperClass(fullName.getEditText().getText().toString(),email.getEditText().getText().toString(),phone.getEditText().getText().toString(),isAccountVerified,userId);
+                                    databaseReference.child(userId).setValue(userHelperClass);
+
                                 }
                             }).addOnFailureListener(new OnFailureListener() {
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
                                     System.out.println("Unable to sent email");
-                                    Toast.makeText(SignupActivity.this, "Unfortunately "+e.getMessage().toString(), Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(SignupActivity.this, "Unfortunately "+e.getMessage(), Toast.LENGTH_SHORT).show();
                                 }
                             });
                            /* mAuth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnSuccessListener<Void>() {

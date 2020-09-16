@@ -18,6 +18,8 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class LoginActivity extends AppCompatActivity {
     Button callSignup,signin;
@@ -25,6 +27,10 @@ public class LoginActivity extends AppCompatActivity {
     TextView greeting,instruction;
     TextInputLayout email,password;
     FirebaseAuth mAuth;
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
+    FirebaseUser user;
+    UserHelperClass userHelperClass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,16 +39,6 @@ public class LoginActivity extends AppCompatActivity {
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         mAuth=FirebaseAuth.getInstance();
-        /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            Fade fade=new Fade();
-            View decor=getWindow().getDecorView();
-            fade.excludeTarget(android.R.id.statusBarBackground,true);
-            fade.excludeTarget(android.R.id.navigationBarBackground,true);
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                getWindow().setExitTransition(fade);
-                getWindow().setEnterTransition(fade);
-            }
-        }*/
         email=findViewById(R.id.email);
         password=findViewById(R.id.password);
         callSignup=findViewById(R.id.signincall);
@@ -58,19 +54,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent=new Intent(LoginActivity.this,SignupActivity.class);
                 startActivity(intent);
-                /*Pair[] pairs=new Pair[7];
-                pairs[0]=new Pair<View,String>(knack_logo,"logo_img");
-                pairs[1]=new Pair<View,String>(greeting,"greeting_tran");
-                pairs[2]=new Pair<View,String>(instruction,"instruction_tran");
-                pairs[3]=new Pair<View,String>(username,"username_trans");
 
-                pairs[4]=new Pair<View,String>(password,"password_trans");
-                pairs[5]=new Pair<View,String>(signin,"gobtn_trans");
-                pairs[6]=new Pair<View,String>(callSignup,"signup_btn_tran");
-                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
-                    ActivityOptions options=ActivityOptions.makeSceneTransitionAnimation(LoginActivity.this,pairs);
-                    startActivity(intent,options.toBundle());
-                }*/
             }
         });
         signin.setOnClickListener(new View.OnClickListener() {
@@ -87,7 +71,15 @@ public class LoginActivity extends AppCompatActivity {
                                     if(mAuth.getCurrentUser().isEmailVerified()){
                                         Toast.makeText(LoginActivity.this, "SIgned in succesfully", Toast.LENGTH_SHORT).show();
                                         startActivity(new Intent(LoginActivity.this,MainActivity.class));
-                                        FirebaseUser user = mAuth.getCurrentUser();
+                                        user = mAuth.getCurrentUser();
+                                        userHelperClass=new UserHelperClass();
+                                        userHelperClass.setAccountVerified(true);
+
+                                        firebaseDatabase=FirebaseDatabase.getInstance();
+                                        databaseReference=firebaseDatabase.getReference("users");
+                                        databaseReference.child(user.getUid()).child("accountVerified").setValue(true);
+
+
                                     }
                                     else{
                                         Toast.makeText(LoginActivity.this, "Please Verify your email", Toast.LENGTH_SHORT).show();
