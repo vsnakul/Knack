@@ -31,6 +31,7 @@ public class LoginActivity extends AppCompatActivity {
     DatabaseReference databaseReference;
     FirebaseUser user;
     UserHelperClass userHelperClass;
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +58,8 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
+        email.getEditText().setText("vsnakul@gmail.com");
+        password.getEditText().setText("Nakul@123");
         signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,11 +76,10 @@ public class LoginActivity extends AppCompatActivity {
                                         startActivity(new Intent(LoginActivity.this,MainActivity.class));
                                         user = mAuth.getCurrentUser();
                                         userHelperClass=new UserHelperClass();
-                                        userHelperClass.setAccountVerified(true);
-
                                         firebaseDatabase=FirebaseDatabase.getInstance();
-                                        databaseReference=firebaseDatabase.getReference("users");
-                                        databaseReference.child(user.getUid()).child("accountVerified").setValue(true);
+                                        databaseReference=firebaseDatabase.getReference("users").child(user.getUid()).child("accountVerified");
+                                        databaseReference.setValue(true);
+
 
 
                                     }

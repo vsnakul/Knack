@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="20dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="20dp"
+            android:layout_margin="15dp"
+            app:cardUseCompatPadding="false"
+            app:cardPreventCornerOverlap="false"
+
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/profileHeadercolor"
+
+                android:padding="25dp">
+
+                <TextView
+                    android:id="@+id/username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:text="Akhil K M"
+                    android:textColor="#fff"
+                    android:textSize="20sp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/userEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/username"
+                    android:text="akhilkm94gmail.com"
+                    android:textColor="#fff"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="60dp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/userphone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/userEmail"
+                    android:text="9745547098"
+                    android:layout_marginLeft="60dp"
+                    android:textColor="#fff"
+                    android:textSize="20sp">
+
+                </TextView>
+
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/profilepic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
+            android:src="@mipmap/ic_launcher_round"
+            android:elevation="10dp"
+            android:layout_marginTop="-150dp"
+            ></com.google.android.material.imageview.ShapeableImageView>
+
+    </LinearLayout>
+
+</LinearLayout>

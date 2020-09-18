@@ -4,18 +4,26 @@ public class UserHelperClass {
     String fullName;
     String email;
     String phone;
-    boolean isAccountVerified;
     String userID;
+    boolean accountVerified;
     public UserHelperClass(){
 
     }
 
-    public UserHelperClass(String fullName, String email, String phone, boolean isAccountVerified,String userID) {
+    public UserHelperClass(String fullName, String email, String phone,String userID,boolean isAccountVerified) {
         this.fullName = fullName;
         this.email = email;
         this.phone = phone;
-        this.isAccountVerified = isAccountVerified;
         this.userID=userID;
+        this.accountVerified=isAccountVerified;
+    }
+
+    public boolean isAccountVerified() {
+        return accountVerified;
+    }
+
+    public void setAccountVerified(boolean accountVerified) {
+        accountVerified = accountVerified;
     }
 
     public String getUserID() {
@@ -50,11 +58,4 @@ public class UserHelperClass {
         this.phone = phone;
     }
 
-    public boolean isAccountVerified() {
-        return isAccountVerified;
-    }
-
-    public void setAccountVerified(boolean accountVerified) {
-        isAccountVerified = accountVerified;
-    }
 }

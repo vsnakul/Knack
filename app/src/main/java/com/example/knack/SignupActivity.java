@@ -100,7 +100,7 @@ public class SignupActivity extends AppCompatActivity {
                                     firebaseUser=mAuth.getCurrentUser();
                                     String userId=firebaseUser.getUid();
                                     System.out.println("id of the user is "+userId);
-                                     userHelperClass=new UserHelperClass(fullName.getEditText().getText().toString(),email.getEditText().getText().toString(),phone.getEditText().getText().toString(),isAccountVerified,userId);
+                                     userHelperClass=new UserHelperClass(fullName.getEditText().getText().toString(),email.getEditText().getText().toString(),phone.getEditText().getText().toString(),userId,isAccountVerified);
                                     databaseReference.child(userId).setValue(userHelperClass);
 
                                 }
