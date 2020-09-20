@@ -183,39 +183,41 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="30dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Place"
-                android:textSize="18sp"
-                android:textColor="#000"
-                >
-
-            </TextView>
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                >
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:text="Kottayam"
-                    android:textSize="20sp"
-                    android:textColor="@color/profileHeadercolor"
-                    android:layout_marginTop="5dp">
+                    android:textColorHint="#094067"
+                    app:hintTextColor="#094067"
+                    android:id="@+id/placeLayout"
+                    >
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="Place"
+                        android:maxLines="1"
+                        ></com.google.android.material.textfield.TextInputEditText>
+                </com.google.android.material.textfield.TextInputLayout>
 
-                </TextView>
+
                 <ImageView
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:src="@drawable/location"
-                    android:layout_marginLeft="200dp">
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@id/placeLayout"
+
+                    >
 
                 </ImageView>
 
 
-            </LinearLayout>
+            </RelativeLayout>
 
 
             <TextView
@@ -247,11 +249,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Driving"
-                            android:layout_marginLeft="10dp"
+                            android:layout_marginLeft="20dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="10dp"
                             android:layout_marginRight="40dp"
-                            android:textSize="20sp"
+                            android:textSize="16sp"
                             android:textColor="@color/profileHeadercolor">
 
                         </TextView>
@@ -259,7 +261,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="X"
-                            android:textSize="20sp"
+                            android:textSize="16sp"
                             android:layout_margin="10dp">
 
                         </TextView>
@@ -280,24 +282,26 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Swimming"
-                            android:layout_marginLeft="10dp"
+                            android:layout_marginLeft="20dp"
                             android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginRight="40dp"
-                            android:textSize="20sp"
-                            android:textColor="@color/profileHeadercolor">
+                            android:layout_marginBottom="10dp"
+                            android:text="Swimming"
+                            android:textColor="@color/profileHeadercolor"
+                            android:textSize="16sp">
 
                         </TextView>
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
                             android:text="X"
-                            android:textSize="20sp"
-                            android:layout_margin="10dp">
+                            android:textSize="16sp">
 
                         </TextView>
 
@@ -322,24 +326,26 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Dancing"
-                            android:layout_marginLeft="10dp"
+                            android:layout_marginLeft="20dp"
                             android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginRight="40dp"
-                            android:textSize="20sp"
-                            android:textColor="@color/profileHeadercolor">
+                            android:layout_marginBottom="10dp"
+                            android:text="Dancing"
+                            android:textColor="@color/profileHeadercolor"
+                            android:textSize="16sp">
 
                         </TextView>
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
                             android:text="X"
-                            android:textSize="20sp"
-                            android:layout_margin="10dp">
+                            android:textSize="16sp">
 
                         </TextView>
 
@@ -357,24 +363,26 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Football"
-                            android:layout_marginLeft="10dp"
+                            android:layout_marginLeft="20dp"
                             android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginRight="40dp"
-                            android:textSize="20sp"
-                            android:textColor="@color/profileHeadercolor">
+                            android:layout_marginBottom="10dp"
+                            android:text="Football"
+                            android:textColor="@color/profileHeadercolor"
+                            android:textSize="16sp">
 
                         </TextView>
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
                             android:text="X"
-                            android:textSize="20sp"
-                            android:layout_margin="10dp">
+                            android:textSize="16sp">
 
                         </TextView>
 
@@ -399,24 +407,26 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Shooting"
-                            android:layout_marginLeft="10dp"
+                            android:layout_marginLeft="20dp"
                             android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginRight="40dp"
-                            android:textSize="20sp"
-                            android:textColor="@color/profileHeadercolor">
+                            android:layout_marginBottom="10dp"
+                            android:text="Shooting"
+                            android:textColor="@color/profileHeadercolor"
+                            android:textSize="16sp">
 
                         </TextView>
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
                             android:text="X"
-                            android:textSize="20sp"
-                            android:layout_margin="10dp">
+                            android:textSize="16sp">
 
                         </TextView>
 
@@ -434,14 +444,14 @@
                     >
 
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="+"
-                            android:textSize="20sp"
-                            android:layout_margin="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="+"
+                        android:textSize="16sp">
 
-                        </TextView>
+                    </TextView>
 
 
 

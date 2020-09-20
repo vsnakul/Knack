@@ -70,41 +70,6 @@ public class HomeFragment extends Fragment {
                 Toast.makeText(getContext(), "Ooops..something went wrong", Toast.LENGTH_SHORT).show();
             }
         });
-/*
-        databaseReference.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                System.out.println(snapshot.toString());
-                for(DataSnapshot dataSnapshot:snapshot.getChildren()){
-                    if (!profiles.contains(dataSnapshot.getValue())){
-                        UserHelperClass p=dataSnapshot.getValue(UserHelperClass.class);
-                        profiles.add(p);
-
-                    }
-                }
-            }
-
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
-            }
-
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-*/
 
     }
 }

@@ -1,21 +1,37 @@
 package com.example.knack;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 public class UserHelperClass {
     String fullName;
     String email;
     String phone;
     String userID;
     boolean accountVerified;
+    ArrayList<String> connections;
+
+
     public UserHelperClass(){
 
     }
 
-    public UserHelperClass(String fullName, String email, String phone,String userID,boolean isAccountVerified) {
+    public UserHelperClass(String fullName, String email, String phone,String userID,boolean isAccountVerified,ArrayList<String> connections) {
         this.fullName = fullName;
         this.email = email;
         this.phone = phone;
         this.userID=userID;
+        this.connections=connections;
         this.accountVerified=isAccountVerified;
+    }
+
+    public ArrayList<String> getConnections() {
+        return connections;
+    }
+
+    public void setConnections(ArrayList<String> connections) {
+        this.connections = connections;
     }
 
     public boolean isAccountVerified() {
@@ -25,6 +41,7 @@ public class UserHelperClass {
     public void setAccountVerified(boolean accountVerified) {
         accountVerified = accountVerified;
     }
+
 
     public String getUserID() {
         return userID;
