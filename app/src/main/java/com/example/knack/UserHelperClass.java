@@ -11,19 +11,39 @@ public class UserHelperClass {
     String userID;
     boolean accountVerified;
     ArrayList<String> connections;
-
+    ArrayList<String> requests;
+    String skills;
 
     public UserHelperClass(){
 
     }
 
-    public UserHelperClass(String fullName, String email, String phone,String userID,boolean isAccountVerified,ArrayList<String> connections) {
+    public UserHelperClass(String fullName, String email, String phone,String userID,boolean isAccountVerified,
+                           ArrayList<String> connections,ArrayList<String> requests,String skills) {
         this.fullName = fullName;
         this.email = email;
         this.phone = phone;
         this.userID=userID;
         this.connections=connections;
         this.accountVerified=isAccountVerified;
+        this.requests=requests;
+        this.skills=skills;
+    }
+
+    public String getSkills() {
+        return skills;
+    }
+
+    public void setSkills(String skills) {
+        this.skills = skills;
+    }
+
+    public ArrayList<String> getRequests() {
+        return requests;
+    }
+
+    public void setRequests(ArrayList<String> requests) {
+        this.requests = requests;
     }
 
     public ArrayList<String> getConnections() {

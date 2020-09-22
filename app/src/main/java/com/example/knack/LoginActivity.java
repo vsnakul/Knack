@@ -58,8 +58,8 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
-        email.getEditText().setText("vsnakul@gmail.com");
-        password.getEditText().setText("Nakul@123");
+        email.getEditText().setText("akhilkm75@gmail.com");
+        password.getEditText().setText("Akhil123@");
         signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
